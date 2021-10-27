@@ -1,0 +1,21 @@
+# docker-compose.yml
+# Usage:
+#   docker-compose up -d --build
+version: '3'
+services:
+  # STATIC
+  static:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        NODE_ENV: 'stage'
+        PORT: 3002
+    image: gcr.io/gambit-prod-ha/static-app
+    volumes:
+      - .:/app
+    ports:
+      - "3002:3002"
+
+volumes:
+  static:

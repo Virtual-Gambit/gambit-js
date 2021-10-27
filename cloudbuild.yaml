@@ -1,0 +1,15 @@
+##
+# cloudbuild.yaml
+#
+# Usage:
+#   export COMMIT_SHA=$(git rev-parse --short HEAD)
+##
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/$_STATIC-app:latest', '.', '-f Dockerfile.prod']
+images: ['gcr.io/$PROJECT_ID/$_STATIC-app:latest']
+options:
+  substitutionOption: ALLOW_LOOSE
+substitutions:
+  _STATIC: 'static'
+timeout: 900s
