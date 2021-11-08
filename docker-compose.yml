@@ -11,7 +11,7 @@ services:
       args:
         NODE_ENV: 'stage'
         PORT: 3002
-    image: gcr.io/gambit-prod-ha/static-app
+    image: gcr.io/com-gambit-prod/static-app
     volumes:
       - .:/app
     ports:

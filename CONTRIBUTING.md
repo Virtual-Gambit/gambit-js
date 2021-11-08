@@ -173,5 +173,5 @@ docker system prune -a --volumes
 
 Examine Container
 ```
-docker run -it gcr.io/gambit-prod-ha/server-app bash
+docker run -it gcr.io/com-gambit-prod/server-app bash
 ```
